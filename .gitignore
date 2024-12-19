@@ -3,4 +3,5 @@
 !font
 !font/**
 !*.py
+!*.md
 __pycache__

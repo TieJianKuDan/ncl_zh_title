@@ -25,7 +25,7 @@ def crop_white_borders(image_path):
         print("图片是完全空白的或纯白色")
     return image
 
-def draw_title(title, image, output_path, zh_font="宋体粗.ttf", en_font="timesb.ttf"):
+def draw_title(title, image, output_path, zh_font="font/宋体粗.ttf", en_font="font/timesb.ttf"):
     if isinstance(image, str):
         image = Image.open(image)
 

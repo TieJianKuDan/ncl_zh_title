@@ -1,0 +1,6 @@
+*
+!.gitignore
+!font
+!font/**
+!*.py
+__pycache__

@@ -37,8 +37,8 @@ def draw_title(title, image, output_path, zh_font="font/宋体粗.ttf", en_font=
     draw = ImageDraw.Draw(new_image)
 
     try:
-        font_chinese = ImageFont.truetype(zh_font, 36)
-        font_english = ImageFont.truetype(en_font, 36)
+        font_chinese = ImageFont.truetype(zh_font, 30)
+        font_english = ImageFont.truetype(en_font, 30)
     except IOError:
         raise IOError("无法加载字体文件，请确保路径正确并安装所需字体！")
 

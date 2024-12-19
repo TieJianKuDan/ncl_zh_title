@@ -73,9 +73,9 @@ def draw_title(title, image, output_path, zh_font="宋体粗.ttf", en_font="time
 
 
 if __name__ == "__main__":
-    image_path = "rmaps-ocean_2024102912_00_1001_VIS_1.png"
-    output_path = "temp.png"
-    title = "睿图-海洋2.0 0h 预报: Horizontal Visibility"
+    image_path = argv[1]
+    output_path = image_path
+    title = argv[2]
 
     image = crop_white_borders(image_path)
     draw_title(title, image, output_path)

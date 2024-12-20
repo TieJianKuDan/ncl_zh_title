@@ -55,7 +55,24 @@ def draw_title(title, image, output_path, zh_font="font/宋体粗.ttf", en_font=
         (font_chinese.getbbox(seg)[2] if re.search(zh_pattern, seg) else font_english.getbbox(seg)[2])
         for seg in segments
     )
-    x = (new_width - total_width) // 2
+
+    image_rgb = image.convert("RGB")
+    pixels = image_rgb.load()
+    width, height = image_rgb.size
+
+    pad = 0
+    for x in range(width):
+        count = 0
+        for y in range(height):
+            if pixels[x, y] == (23, 23, 23):
+                count = count + 1
+            if count > 300:
+                pad = x
+                break
+        if pad != 0:
+            break
+
+    x = (new_width + pad - total_width) // 2
     yc = (title_height - font_chinese.size) // 2
     ascent, descent = font_english.getmetrics()
     ye = (title_height - font_english.size - descent) // 2

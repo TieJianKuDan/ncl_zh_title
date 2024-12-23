@@ -73,9 +73,10 @@ def draw_title(title, image, output_path, zh_font="font/宋体粗.ttf", en_font=
             break
 
     x = (new_width + pad - total_width) // 2
-    yc = (title_height - font_chinese.size) // 2
-    ascent, descent = font_english.getmetrics()
-    ye = (title_height - font_english.size - descent) // 2
+    box = font_chinese.getbbox("哈哈")
+    yc = (title_height - (box[3] - box[1])) // 2
+    ascend, descent = font_english.getmetrics()
+    ye = (title_height - ascend - descent) // 2
 
     # 绘制每段文字
     for seg in segments:
